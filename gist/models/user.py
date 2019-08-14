@@ -15,7 +15,7 @@ class User(Base):
     __tablename__ = "users"
     id = Column(Integer, primary_key=True)
     username = Column(Text, nullable=False, unique=True)
-    email = Column(Text, nullable=False, unique=True)
+    # email = Column(Text, nullable=False, unique=True)
     role = Column(Text, nullable=False)
     password_hash = Column(Text)
 

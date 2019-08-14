@@ -11,7 +11,7 @@ from .meta import Base
 class Page(Base):
     """The SQLAlchemy declarative model class for a User object."""
     __tablename__ = "pages"
-    id = Column(Text, primary_key=True)
+    id = Column(Integer, primary_key=True)
     title = Column(Text, nullable=False, unique=True)
     data = Column(Text, nullable=False)
 

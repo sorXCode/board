@@ -1,0 +1,6 @@
+[console_scripts]
+initialize_gist_db = gist.scripts.initialize_db:main
+
+[paste.app_factory]
+main = gist:main
+

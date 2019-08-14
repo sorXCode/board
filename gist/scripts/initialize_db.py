@@ -12,9 +12,28 @@ def setup_models(dbsession):
     Add or update models / fixtures in the database.
 
     """
-    model = models.mymodel.MyModel(name='one', value=1)
-    dbsession.add(model)
+    god = models.User(
+        username='god',
+        # email='sorxcode@gmail.com',
+        role='god'
+    )
+    god.set_password('thisisagoduser')
+    dbsession.add(god)
 
+    basic = models.User(
+        username='basic',
+        # email='ennythan006@gmail.com',
+        role='basic'
+    )
+    basic.set_password('thisisabasicuser')
+    dbsession.add(basic)
+
+    page = models.Page(
+        title="FrontPage",
+        data="This is the front page",
+        creator=god 
+    )
+    dbsession.add(page)
 
 def parse_args(argv):
     parser = argparse.ArgumentParser()
