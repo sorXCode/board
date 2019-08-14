@@ -1,0 +1,19 @@
+from sqlalchemy import (
+    Column,
+    ForeignKey,
+    Integer,
+    Text,
+)
+from sqlalchemy.orm import relationship
+
+from .meta import Base
+
+class Page(Base):
+    """The SQLAlchemy declarative model class for a User object."""
+    __tablename__ = "pages"
+    id = Column(Text, primary_key=True)
+    title = Column(Text, nullable=False, unique=True)
+    data = Column(Text, nullable=False)
+
+    creator_id = Column(ForeignKey('users.id'), nullable=False)
+    creator = relationship('User', backref='created_pages')
