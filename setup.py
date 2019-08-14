@@ -21,6 +21,7 @@ requires = [
     'transaction',
     'zope.sqlalchemy',
     'bcrypt',
+    'docutils',
 ]
 
 tests_require = [
