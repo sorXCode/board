@@ -1,8 +1,9 @@
-import bcrypt
+from datetime import datetime
 from sqlalchemy import (
     Column,
     Integer,
     Text,
+    DateTime
 )
 
 
@@ -16,3 +17,4 @@ class Feedback(Base):
     full_name = Column(Text, nullable=False)
     email = Column(Text, nullable=False)
     message = Column(Text, nullable=False)
+    time = Column(DateTime, default=datetime.now)

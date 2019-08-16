@@ -12,7 +12,7 @@ def setup_models(dbsession):
     Add or update models / fixtures in the database.
 
     """
-    log = models.Feedback(
+    entry = models.Feedback(
         subject="Need Help",
         name="Victor Adeyanju",
         email="sorxcode@gmail.com",
@@ -23,7 +23,7 @@ def setup_models(dbsession):
        help me?
        """
     )
-    dbsession.add(log)
+    dbsession.add(entry)
 
 
 def parse_args(argv):
