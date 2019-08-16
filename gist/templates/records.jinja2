@@ -1,0 +1,34 @@
+<head>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+<link href="{{request.static_url('gist:static/new-age.css')}}" rel="stylesheet">
+<link href="{{request.static_url('gist:static/new-age.min.css')}}" rel="stylesheet">
+
+</head>
+
+<header class="masthead">
+
+<div class="row">
+      <div class="col-md col-sm ml-2 center">Subject</div>
+      <div class="col-md col-sm">Full Name</div>
+      <div class="col-md col-sm">Email</div>
+      <div class="col-md col-sm">Message</div>
+      <div class="col-md col-sm">Date/Time</div>
+</div>
+{% for row  in table %}
+
+<div class="row">
+      <div class="col-md col-sm ml-2 center">{{row.subject}}</div>
+      <div class="col-md col-sm">{{row.full_name}}</div>
+      <div class="col-md col-sm">{{row.email}}</div>
+      <div class="col-md col-sm">{{row.message}}</div>
+      <div class="col-md col-sm">{{row.time}}</div>
+
+</div>
+{% endfor %}
+</header>
+<div>
+
+    
+</div>

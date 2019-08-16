@@ -13,7 +13,8 @@ requires = [
     'pyramid',
     'pyramid_jinja2',
     'pyramid_debugtoolbar',
-    'waitress',
+    'waitress'
+    'deform',
     'alembic',
     'pyramid_retry',
     'pyramid_tm',

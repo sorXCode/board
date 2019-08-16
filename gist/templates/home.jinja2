@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125398164-1"></script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="DRO Health is a telehealth platform that makes quality healthcare easily accessible, convenient and affordable! You and your family can use DRO Health for consultations, checkups and a lot more!">
+    <meta name="keywords" content="dro health, DRO Health, drohealth, telemedicine in nigeria, talk to doctors online nigeria, dro health app">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="DRO Health | The Telehealth Solution">
+    <meta property="og:description" content="DRO Health is a telehealth platform that makes quality healthcare easily accessible, convenient and affordable! You and your family can use DRO Health for consultations, checkups and a lot more!">
+    <meta property="og:url" content="https://drohealth.com">
+    <meta property="og:site_name" content="DRO Health">
+    <meta name="google-site-verification" content="YoXqMUsYx_Bmi8QkODbWY1-fETqpuSEOTaDR3hNp7BI" />
+    <meta name="google-site-verification" content="seHCUeiXupsLY1SWKqq-OBDGwMGxgL4yTIjIk73jFHU" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://drohealth.com">
+
+    <title>DRO Health | The Telehealth Solution</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <!-- link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="{{request.static_url('gist:static/new-age.css')}}" rel="stylesheet">
+    <link href="{{request.static_url('gist:static/new-age.min.css')}}" rel="stylesheet">
+
+    <style>
+        .row .col-md-6 img {
+            height: 600px;
+            width: 400px;
+            padding-left: 50px;
+            padding-top: 20px;
+        }
+        
+        button {
+            margin-top: 50px;
+        }
+    </style>
+
+    <!-- Load header and footer-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+</head>
+
+<body id="page-top">
+    <header class="masthead">
+        {% block body %}
+        <div class="col-md-12 text-center my-auto">
+            <h2>DRO Health is a telehealth platform that makes quality healthcare easily accessible, convenient and affordable!</h1>
+            </h2>
+            <a class="badge-link" href="https://play.google.com/store/apps/details?id=org.seadvocacy.docsrchout"><img src="{{request.static_url('gist:static/google-play-badge.svg')}}" alt="Google Play badge" width=130px></a>
+            <a class="badge-link" href="https://itunes.apple.com/us/app/dro-health/id1397568078"><img src="{{request.static_url('gist:static/app-store-badge.svg')}}" alt="App Store badge"></a>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                <img src="{{request.static_url('gist:static/home.png')}}" alt="DRO Health app homescreen">
+            </div>
+            <div class="col-md-6 my-auto section-heading text-center">
+                <h2>Anything to say?</h2>
+                <p>Our team will reply as fast as they can!</p>
+                <hr>
+                <form class="needs-validation" id="contact-form" method="POST">
+                    <div class="form-row">
+                        <div class="col-mb-6 col-sm- mb-4">
+                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" name="subject" placeholder="Subject" value="" required>
+                            <div class="invalid-feedback">Please enter a subject.</div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <label for="fullname">Full name</label>
+                            <input type="text" class="form-control" name="full_name" placeholder="Full name" value="" required>
+                            <div class="invalid-feedback">Please enter your full name.</div>
+                        </div>
+                        <div class="col-md-3 mb-4 justify-center"></div>
+                        <div class="col-md-6 mb-4 justify-center">
+                            <label for="email">Email address</label>
+                            <div class="input-group">
+                                <input type="email" class="form-control" name="email" placeholder="Email Address" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-3 mb-4 justify-center"></div> -->
+                        <div class="col-md-10 mb-4">
+                            <label for="specialty">Your Message</label>
+                            <div class="input-group">
+                                <textarea type="text" class="form-control" name="message" rows="2" placeholder="Message" aria-describedby="inputGroupPrepend" required></textarea>
+                                <div class="invalid-feedback">Please enter a message.</div>
+                            </div>
+                            <button class="btn btn-primary" name="feedback.submitted" type="submit" onclick="dial()">Submit form</button>
+                </form>
+                </div>
+                </div>
+                <!-- </div> -->
+                <!-- </div> -->
+                {% endblock body%}
+    </header>
+
+
+    <footer id="dro-footer">
+        &copy; Drohealth
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+
+    <!-- Script for validating form and sending to Basin-->
+
+    <script>
+        function dial() {
+            alert("form submited!")
+        }
+    </script>
+
+</body>
+
+</html>

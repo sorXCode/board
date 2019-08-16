@@ -6,27 +6,34 @@ from sqlalchemy.exc import DBAPIError
 from .. import models
 
 
-@view_config(route_name='home', renderer='../templates/mytemplate.jinja2')
-def my_view(request):
-    try:
-        query = request.dbsession.query(models.MyModel)
-        one = query.filter(models.MyModel.name == 'one').first()
-    except DBAPIError:
-        return Response(db_err_msg, content_type='text/plain', status=500)
-    return {'one': one, 'project': 'gist'}
+class Logger:
+    def __init__(self, request):
+        self.request = request
 
+    @view_config(route_name='home', renderer='../templates/home.jinja2')
+    def home(self):
+        if 'feedback.submitted' in self.request.params:
+            subject = self.request.params['subject']
+            full_name = self.request.params['full_name']
+            email = self.request.params['email']
+            message = self.request.params['message']
+            print(subject, full_name, email, message)
 
-db_err_msg = """\
-Pyramid is having a problem using your SQL database.  The problem
-might be caused by one of the following things:
+            def log():
+                entry = models.Feedback(
+                    subject=subject,
+                    full_name=full_name,
+                    email=email,
+                    message=message
+                )
+                self.request.dbsession.add(entry)
+            log()
+        return {}
 
-1.  You may need to initialize your database tables with `alembic`.
-    Check your README.txt for descriptions and try to run it.
-
-2.  Your database server may not be running.  Check that the
-    database server referred to by the "sqlalchemy.url" setting in
-    your "development.ini" file is running.
-
-After you fix the problem, please restart the Pyramid application to
-try it again.
-"""
+    @view_config(route_name="records", renderer='../templates/records.jinja2')
+    def log_history(self):
+        '''
+        Displays all submitted forms
+        '''
+        table = self.request.dbsession.query(models.Feedback)
+        return dict(table=table)
