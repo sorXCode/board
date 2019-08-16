@@ -1,14 +1,24 @@
-{% extends "home.jinja2" %}
+<head>
 
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+<link href="{{request.static_url('gist:static/new-age.css')}}" rel="stylesheet">
+<link href="{{request.static_url('gist:static/new-age.min.css')}}" rel="stylesheet">
+
+</head>
+
+<header class="masthead">
 {% for row  in table %}
- <p>{{row.id, row.subject, row.full_name,
-      row.email, row.message}}</p>
+
+<div class="row">
+      <div class="col-md-2 ml-2 center">{{row.subject}}</div>
+      <div class="col-md-3">{{row.full_name}}</div>
+      <div class="col-md-2">{{row.email}}</div>
+      <div class="col-md-3">{{row.message}}</div>
+</div>
 {% endfor %}
+</header>
 <div>
 
     
 </div>
-
-
-
-<>
