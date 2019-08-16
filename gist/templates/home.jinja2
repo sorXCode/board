@@ -38,7 +38,20 @@
 
     <!-- Custom styles for this template -->
     <link href="{{request.static_url('gist:static/new-age.css')}}" rel="stylesheet">
-    <link href="{{request.static_url('gist:static/new-age.min,css')}}" rel="stylesheet">
+    <link href="{{request.static_url('gist:static/new-age.min.css')}}" rel="stylesheet">
+
+    <style>
+        .row .col-md-6 img {
+            height: 600px;
+            width: 400px;
+            padding-left: 50px;
+            padding-top: 20px;
+        }
+        
+        button {
+            margin-top: 50px;
+        }
+    </style>
 
     <!-- Load header and footer-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -48,97 +61,55 @@
 </head>
 
 <body id="page-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    </nav>
-
-    <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
-
     <header class="masthead">
-        <div class="container h-100">
-            <div class="row h-100">
-                <div class="col-lg-7 my-auto">
-                    <div class="header-content mx-auto">
-                        <h1 class="mb-5">DRO Health is a telehealth platform that makes quality healthcare easily accessible, convenient and affordable!</h1>
-                        </h1>
-                        <div class="badges">
-                            <a class="badge-link" href="https://play.google.com/store/apps/details?id=org.seadvocacy.docsrchout"><img src="{{request.static_url('gist:static/google-play-badge.svg')}}" alt="Google Play badge" width=130px></a>
-                            <a class="badge-link" href="https://itunes.apple.com/us/app/dro-health/id1397568078"><img src="{{request.static_url('gist:static/app-store-badge.svg')}}" alt="App Store badge"></a>
+        {% block body %}
+        <div class="col-md-12 text-center my-auto">
+            <h2>DRO Health is a telehealth platform that makes quality healthcare easily accessible, convenient and affordable!</h1>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                <img src="{{request.static_url('gist:static/home.png')}}" alt="DRO Health app homescreen">
+            </div>
+            <div class="col-md-6 my-auto section-heading text-center">
+                <h2>Anything to say?</h2>
+                <p>Our team will reply as fast as they can!</p>
+                <hr>
+                <form class="needs-validation" id="contact-form" method="POST">
+                    <div class="form-row">
+                        <div class="col-mb-6 mb-4">
+                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" name="subject" placeholder="Subject" value="" required>
+                            <div class="invalid-feedback">Please enter a subject.</div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 my-auto">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="{{request.static_url('gist:static/home.png')}}" class="img-fluid" alt="DRO Health app homescreen">
-                                    <div class="container">
-                                        <div class="section-heading text-center">
-                                            <h2>Anything to say?</h2>
-                                            <p class="text-muted">Our team will reply as fast as they can!</p>
-                                            <hr>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <div class="no-display" id="contact-confirmation">
-                                                    <i class="icon-check"></i>
-                                                    <p class="text-center">Your form has been submitted. We will get back to you as fast as we can.</p>
-                                                </div>
-                                                <form class="needs-validation" id="contact-form" method="POST" novalidate>
-                                                    <div class="form-row">
-                                                        <div class="col-lg-12 mb-4">
-                                                            <label for="subject">Subject</label>
-                                                            <input type="text" class="form-control" name="subject" placeholder="Subject" value="" required>
-                                                            <div class="invalid-feedback">
-                                                                Please enter a subject.
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6 mb-4">
-                                                            <label for="fullname">Full name</label>
-                                                            <input type="text" class="form-control" name="full_name" placeholder="Full name" value="" required>
-                                                            <div class="invalid-feedback">
-                                                                Please enter your full name.
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6 mb-4">
-                                                            <label for="email">Email address</label>
-                                                            <div class="input-group">
-                                                                <input type="email" class="form-control" name="email" placeholder="Email Address" aria-describedby="inputGroupPrepend" required>
-                                                                <div class="invalid-feedback">
-                                                                    Please enter a valid email address.
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-12 mb-4">
-                                                            <label for="specialty">Your Message</label>
-                                                            <div class="input-group">
-                                                                <textarea type="text" class="form-control" name="message" rows="2" placeholder="Message" aria-describedby="inputGroupPrepend" required></textarea>
-                                                                <div class="invalid-feedback">
-                                                                    Please enter a message.
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="doctors-reg-button">
-                                                        <button class="btn btn-primary" name="feedback.submitted" type="submit">Submit form</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="button">
-                                        <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                                    </div>
-                                </div>
+                        <div class="col-md-6 mb-4">
+                            <label for="fullname">Full name</label>
+                            <input type="text" class="form-control" name="full_name" placeholder="Full name" value="" required>
+                            <div class="invalid-feedback">Please enter your full name.</div>
+                        </div>
+                        <div class="col-md-3 mb-4 justify-center"></div>
+                        <div class="col-md-6 mb-4 justify-center">
+                            <label for="email">Email address</label>
+                            <div class="input-group">
+                                <input type="email" class="form-control" name="email" placeholder="Email Address" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
                             </div>
                         </div>
-                    </div>
+                        <!-- <div class="col-md-3 mb-4 justify-center"></div> -->
+                        <div class="col-md-10 mb-4">
+                            <label for="specialty">Your Message</label>
+                            <div class="input-group">
+                                <textarea type="text" class="form-control" name="message" rows="2" placeholder="Message" aria-describedby="inputGroupPrepend" required></textarea>
+                                <div class="invalid-feedback">Please enter a message.</div>
+                            </div>
+                            <button class="btn btn-primary" name="feedback.submitted" type="submit" onclick="dial()">Submit form</button>
+                </form>
                 </div>
-            </div>
+                </div>
+                <!-- </div> -->
+                <!-- </div> -->
+                {% endblock body%}
     </header>
 
 
@@ -152,6 +123,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
 
     <!-- Script for validating form and sending to Basin-->
+
+    <script>
+        function dial() {
+            alert("form submited!")
+        }
+    </script>
 
 </body>
 
