@@ -8,13 +8,23 @@
 </head>
 
 <header class="masthead">
+
+<div class="row">
+      <div class="col-md col-sm ml-2 center">Subject</div>
+      <div class="col-md col-sm">Full Name</div>
+      <div class="col-md col-sm">Email</div>
+      <div class="col-md col-sm">Message</div>
+      <div class="col-md col-sm">Date/Time</div>
+</div>
 {% for row  in table %}
 
 <div class="row">
-      <div class="col-md-2 ml-2 center">{{row.subject}}</div>
-      <div class="col-md-3">{{row.full_name}}</div>
-      <div class="col-md-2">{{row.email}}</div>
-      <div class="col-md-3">{{row.message}}</div>
+      <div class="col-md col-sm ml-2 center">{{row.subject}}</div>
+      <div class="col-md col-sm">{{row.full_name}}</div>
+      <div class="col-md col-sm">{{row.email}}</div>
+      <div class="col-md col-sm">{{row.message}}</div>
+      <div class="col-md col-sm">{{row.time}}</div>
+
 </div>
 {% endfor %}
 </header>

@@ -66,6 +66,8 @@
         <div class="col-md-12 text-center my-auto">
             <h2>DRO Health is a telehealth platform that makes quality healthcare easily accessible, convenient and affordable!</h1>
             </h2>
+            <a class="badge-link" href="https://play.google.com/store/apps/details?id=org.seadvocacy.docsrchout"><img src="{{request.static_url('gist:static/google-play-badge.svg')}}" alt="Google Play badge" width=130px></a>
+            <a class="badge-link" href="https://itunes.apple.com/us/app/dro-health/id1397568078"><img src="{{request.static_url('gist:static/app-store-badge.svg')}}" alt="App Store badge"></a>
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -78,7 +80,7 @@
                 <hr>
                 <form class="needs-validation" id="contact-form" method="POST">
                     <div class="form-row">
-                        <div class="col-mb-6 mb-4">
+                        <div class="col-mb-6 col-sm- mb-4">
                             <label for="subject">Subject</label>
                             <input type="text" class="form-control" name="subject" placeholder="Subject" value="" required>
                             <div class="invalid-feedback">Please enter a subject.</div>

@@ -17,4 +17,4 @@ class Feedback(Base):
     full_name = Column(Text, nullable=False)
     email = Column(Text, nullable=False)
     message = Column(Text, nullable=False)
-    # time = Column(DateTime, default=datetime.now)
+    time = Column(DateTime, default=datetime.now)
